@@ -3,6 +3,12 @@ import HomeView from "../views/HomeView.vue";
 
 const routes = [
   {
+    path: "/login",
+    name: "login",
+    component: () =>
+      import("../views/UserLogin.vue"),
+  },
+  {
     path: "/",
     name: "home",
     component: HomeView,
@@ -16,6 +22,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
+  {
+    path: "/user",
+    name: "user",
+    component: () =>
+      import("../views/UserView.vue"),
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: () =>
+      import("../views/UserRegister.vue"),
+  }
 ];
 
 const router = createRouter({
